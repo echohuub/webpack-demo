@@ -9,11 +9,15 @@
         <router-link to="/register">注册</router-link>
 
         <router-view></router-view>
+
+        <mt-button type="danger" size="large" @click="tip">danger</mt-button>
     </div>
 
 </template>
 
 <script>
+
+    import {Toast} from 'mint-ui';
 
     // 负责导出 .vue这个组件对象(它本质上是一个Vue对象,所以Vue中该定义的元素都可以使用)
     export default {  // es6的导出对象的写法
@@ -22,7 +26,11 @@
                 msg: 'hello vuejs!'
             }
         },
-        methods: {},
+        methods: {
+            tip: function () {
+                Toast("Hello");
+            }
+        },
         created() {
 
         }

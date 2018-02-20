@@ -6,17 +6,27 @@ import App from './App.vue';
 
 import VueRouter from 'vue-router';
 
+// 将VueRouter对象绑定到Vue对象上
 Vue.use(VueRouter);
 
+// 导入路由规则对应的组件对象
 import login from './components/account/login.vue'
 import register from './components/account/register.vue'
 
+// 定义路由规则
 var router = new VueRouter({
     routes: [
         {path: '/login', component: login},
         {path: '/register', component: register}
     ]
 });
+
+// 导入mint-ui的css文件
+import 'mint-ui/lib/style.min.css';
+// 导入mint-ui组件对象
+import Mint from 'mint-ui';
+
+Vue.use(Mint);
 
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
