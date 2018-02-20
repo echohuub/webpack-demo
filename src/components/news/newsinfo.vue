@@ -10,6 +10,8 @@
         <div id="content">
             {{content}}
         </div>
+
+        <comment :id="id"></comment>
     </div>
 </template>
 
@@ -17,7 +19,12 @@
 
     import common from "../../utils/common.js";
 
+    import comment from "../subcom/comment.vue";
+
     export default {
+        components: {
+            comment: comment
+        },
         data: function () {
             return {
                 id: 0,
