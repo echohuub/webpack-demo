@@ -19,6 +19,9 @@
 </template>
 
 <script>
+
+    import common from "../../utils/common.js";
+
     export default {
         data: function () {
             return {
@@ -30,6 +33,7 @@
         },
         methods: {
             getNewsList: function () {
+                var url = common.apiDomain + "/newslist";
                 this.$http.get('static/newslist.json').then(response => {
                     this.list = response.body;
                 });

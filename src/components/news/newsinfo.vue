@@ -14,6 +14,9 @@
 </template>
 
 <script>
+
+    import common from "../../utils/common.js";
+
     export default {
         data: function () {
             return {
@@ -30,7 +33,9 @@
         },
         methods: {
             getNewsInfo: function (id) {
-                // console.log("--->" + id);
+
+                var url = common.apiDomain + "/newsInfo";
+
                 this.$http.get('static/newslist.json').then(response => {
                     var list = response.body;
                     for (var i = 0; i < list.length; i++) {

@@ -50,6 +50,9 @@
 </template>
 
 <script>
+
+    import common from "../utils/common.js";
+
     export default {
         data: function () {
             return {
@@ -64,7 +67,7 @@
         methods: {
             getImages: function () {
                 // 模拟网络请求
-                var url = "https://www.baidu.com";
+                var url = common.apiDomain + "/images";
                 this.$http.get(url).then(response => {
                     // success callback
                 }, response => {
