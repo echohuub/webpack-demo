@@ -28,6 +28,8 @@ import Mint from 'mint-ui';
 
 Vue.use(Mint);
 
+import '../static/mui/css/mui.css';
+
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
     el: '#app',
