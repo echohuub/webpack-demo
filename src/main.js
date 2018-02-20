@@ -33,6 +33,10 @@ import '../static/mui/css/mui.css';
 
 import '../static/css/site.css';
 
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
     el: '#app',
