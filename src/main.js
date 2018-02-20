@@ -1,18 +1,12 @@
-var v1 = document.querySelector('#v1');
-var v2 = document.querySelector('#v2');
-var btn = document.querySelector('#btn');
-var res = document.querySelector('#res');
+// 1.0 导入vue核心包
+import Vue from 'vue';
 
-require('../static/css/site.css');
-require('../static/css/site1.scss');
-require('../static/css/site2.less');
+// 2.0 导入App.vue的vue对象
+import App from './App.vue';
 
-import addObj from './calc'
-
-btn.onclick = function () {
-    var v1value = parseFloat(v1.value);
-    var v2value = parseFloat(v2.value);
-
-    // var add = require('./calc');
-    res.value = addObj.add(v1value, v2value);
-}
+// 3.0 利用Vue对象进行解析渲染
+new Vue({
+	el:'#app',
+	// render:function(create){create(App)} //es5的写法
+	render:c=>c(App)  // es6的函数写法 =>：goes to
+});

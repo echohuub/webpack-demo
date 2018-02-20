@@ -29,6 +29,10 @@ module.exports={
   			loader: 'babel-loader',
   			exclude: /node_modules/
   		},
+      {
+        test: /\.vue$/, // 将.vue组件页面文件
+        loader: 'vue-loader'
+      },
   	]
   },
   
@@ -41,7 +45,7 @@ module.exports={
   	new htmlwp({
   		title: '首页', //生成的页面标题<head><title>首页</title></head>
   		filename: 'index.html', //webpack-dev-server在内存中生成的文件名称，自动将build注入到这个页面底部，才能实现自动刷新功能
-  		template: 'index.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
+  		template: 'index1.html' //根据index1.html这个模板来生成(这个文件请程序员自己生成)
   	})
   ]
 }
