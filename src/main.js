@@ -12,13 +12,15 @@ Vue.use(VueRouter);
 // 导入路由规则对应的组件对象
 import home from './components/Home.vue';
 import shopcar from './components/shopcar/car.vue';
+import newslist from './components/news/newslist.vue';
 
 // 定义路由规则
 var router = new VueRouter({
     linkActiveClass: 'mui-active',
     routes: [
         {path: '/home', component: home},
-        {path: '/shopcar', component: shopcar}
+        {path: '/shopcar', component: shopcar},
+        {path: '/news/newslist', component: newslist},
     ]
 });
 
@@ -36,6 +38,12 @@ import '../static/css/site.css';
 import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
+
+import moment from 'moment'
+// 定义一个全局过滤器实现日期格式化
+Vue.filter("datefmt", function (input, fmt) {
+    return moment(input).format(fmt);
+});
 
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
