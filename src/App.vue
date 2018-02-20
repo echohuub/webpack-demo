@@ -4,6 +4,10 @@
     <div>
         <mt-header fixed title="Vue CMS System"></mt-header>
 
+        <div id="back" v-if="isshow">
+            <a href="javascirpt:void(0);" @click="backto">返回</a>
+        </div>
+
         <router-view></router-view>
 
         <nav class="mui-bar mui-bar-tab">
@@ -38,10 +42,24 @@
     export default {  // es6的导出对象的写法
         data() {  //等价于 es5的 data:function(){
             return {
+                isshow: false,
                 msg: 'hello vuejs!'
             }
         },
-        methods: {},
+        watch: {
+            '$route': function (newRoute, oldRoute) {
+                if (newRoute.path.toLowerCase() == '/home') {
+                    this.isshow = false;
+                } else {
+                    this.isshow = true;
+                }
+            }
+        },
+        methods: {
+            backto: function () {
+                this.$router.go(-1);
+            }
+        },
         created() {
 
         }
@@ -49,4 +67,18 @@
 </script>
 
 <style scoped>
+
+    #back {
+        width: 50px;
+        position: absolute;
+        z-index: 101;
+        top: 10px;
+        left: 10px;
+    }
+
+    #back a {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
 </style>
