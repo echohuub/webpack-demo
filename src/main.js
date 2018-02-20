@@ -19,6 +19,7 @@ import newsinfo from './components/news/newsinfo.vue';
 var router = new VueRouter({
     linkActiveClass: 'mui-active',
     routes: [
+        {path: '/', redirect: '/home'},
         {path: '/home', component: home},
         {path: '/shopcar', component: shopcar},
         {path: '/news/newslist', component: newslist},
