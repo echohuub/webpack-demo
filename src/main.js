@@ -13,6 +13,7 @@ Vue.use(VueRouter);
 import home from './components/Home.vue';
 import shopcar from './components/shopcar/car.vue';
 import newslist from './components/news/newslist.vue';
+import newsinfo from './components/news/newsinfo.vue';
 
 // 定义路由规则
 var router = new VueRouter({
@@ -21,6 +22,7 @@ var router = new VueRouter({
         {path: '/home', component: home},
         {path: '/shopcar', component: shopcar},
         {path: '/news/newslist', component: newslist},
+        {path: '/news/newsinfo/:id', component: newsinfo},
     ]
 });
 
