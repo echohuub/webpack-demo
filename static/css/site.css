@@ -1,9 +1,9 @@
-#v1 {
-	border: 1px solid red;
+
+body {
+	background: white;
 }
 
-#bg {
-	width: 120px;
-	height: 120px;
-	background-image: url(../imgs/home.png);
+#tmpl {
+	margin-top: 45px;
+	margin-bottom: 50px;
 }

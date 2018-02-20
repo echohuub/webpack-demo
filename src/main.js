@@ -10,14 +10,15 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 // 导入路由规则对应的组件对象
-import login from './components/account/login.vue'
-import register from './components/account/register.vue'
+import home from './components/Home.vue';
+import shopcar from './components/shopcar/car.vue';
 
 // 定义路由规则
 var router = new VueRouter({
+    linkActiveClass: 'mui-active',
     routes: [
-        {path: '/login', component: login},
-        {path: '/register', component: register}
+        {path: '/home', component: home},
+        {path: '/shopcar', component: shopcar}
     ]
 });
 
@@ -29,6 +30,8 @@ import Mint from 'mint-ui';
 Vue.use(Mint);
 
 import '../static/mui/css/mui.css';
+
+import '../static/css/site.css';
 
 // 3.0 利用Vue对象进行解析渲染
 new Vue({
